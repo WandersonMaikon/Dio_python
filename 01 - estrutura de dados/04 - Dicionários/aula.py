@@ -48,3 +48,14 @@ for chave in contatos:
 
 for chave, valor in contatos.items():
     print(chave, valor)
+
+# utilizando get
+contatos = {
+"guilherme@gmail.com": {"nome": "Guilherme", "telefone": "3333-2221"}
+}
+
+contatos ["chave"] # KeyError
+
+contatos.get("chave") # None
+contatos.get("chave", {}) # {}
+contatos.get("guilherme@gmail.com", {})

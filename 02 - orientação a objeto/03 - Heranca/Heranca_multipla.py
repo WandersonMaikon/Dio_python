@@ -8,14 +8,15 @@ class Animal:
         self.__dict__.items()])}"
 
 class Mamifero(Animal):
-    def __init__(self, n_patas, cor_pelo):
+    def __init__(self, cor_pelo, **km):
         self.cor_pelo = cor_pelo
-        super().__init__(n_patas)
+        super().__init__(**km)
 
 
 class Ave(Animal):
-    def __init__(self, n_patas):
-        super().__init__(n_patas)
+    def __init__(self, cor_bico ,**km):
+        self.cor_bico = cor_bico
+        super().__init__(**km)
 
 class Gato(Mamifero):
     pass
@@ -23,5 +24,8 @@ class Gato(Mamifero):
 class Leao(Mamifero):
     pass
 
-gato = Gato(4, "Braco")
+gato = Gato(n_patas=4,cor_pelo="Branco")
 print(gato)
+
+pato = Ave(n_patas=2, cor_bico="Amarelo")
+print(pato)
